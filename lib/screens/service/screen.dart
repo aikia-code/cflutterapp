@@ -1,11 +1,9 @@
-import 'package:cflutterapp/screens/service/screen.dart';
 import 'package:flutter/material.dart';
 
-class CFlutterAppHome extends StatelessWidget {
-  const CFlutterAppHome({super.key});
+class CFlutterServices extends StatelessWidget {
+  const CFlutterServices({super.key});
 
-  final String routeName = "/";
-  final String pageLabel = "Home";
+  final String pageLabel = "Service";
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +17,11 @@ class CFlutterAppHome extends StatelessWidget {
         elevation: 0,
         shadowColor: themeForegroundColorHot,
         backgroundColor: themeBackgroundColorCool,
-        leading: Icon(
-          Icons.menu,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(Icons.arrow_back_rounded),
           color: themeForegroundColorHot,
         ),
         actions: <Widget>[
@@ -39,14 +40,7 @@ class CFlutterAppHome extends StatelessWidget {
       ),
       body: Center(
         child: TextButton.icon(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => CFlutterServices(),
-              ),
-            );
-          },
+          onPressed: () {},
           style: TextButton.styleFrom(
             backgroundColor: themeBackgroundColorCool,
             alignment: Alignment.center,
@@ -55,7 +49,7 @@ class CFlutterAppHome extends StatelessWidget {
             elevation: 0,
           ),
           icon: Icon(Icons.link_sharp),
-          label: Text("Go to service"),
+          label: Text("Stay!"),
         ),
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/home/screen.dart';
+import 'package:cflutterapp/screens/home/screen.dart';
 
 class CFlutterApp extends StatelessWidget {
   const CFlutterApp({super.key});
