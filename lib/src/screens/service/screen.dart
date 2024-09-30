@@ -1,11 +1,10 @@
-import 'package:cflutterapp/screens/service/screen.dart';
 import 'package:flutter/material.dart';
 
-class CFlutterAppHome extends StatelessWidget {
-  const CFlutterAppHome({super.key});
+class CFlutterServices extends StatelessWidget {
+  const CFlutterServices({super.key});
 
-  final String routeName = "/";
-  final String pageLabel = "Home";
+  final String pageLabel = "Service";
+  static const String routeName = "/service";
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +18,6 @@ class CFlutterAppHome extends StatelessWidget {
         elevation: 0,
         shadowColor: themeForegroundColorHot,
         backgroundColor: themeBackgroundColorCool,
-        leading: Icon(
-          Icons.menu,
-          color: themeForegroundColorHot,
-        ),
         actions: <Widget>[
           IconButton(
             onPressed: () {},
@@ -36,26 +31,21 @@ class CFlutterAppHome extends StatelessWidget {
           fontSize: 16,
         ),
         title: Text(pageLabel),
+        foregroundColor: themeForegroundColorHot,
       ),
       body: Center(
-        child: TextButton.icon(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => CFlutterServices(),
-              ),
-            );
-          },
-          style: TextButton.styleFrom(
-            backgroundColor: themeBackgroundColorCool,
-            alignment: Alignment.center,
-            foregroundColor: themeForegroundColorHot,
-            minimumSize: Size(200, 60),
-            elevation: 0,
+        child: Container(
+          height: 300,
+          width: 300,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(100),
+            color: themeBackgroundColorCool,
           ),
-          icon: Icon(Icons.link_sharp),
-          label: Text("Go to service"),
+          child: Icon(
+            Icons.settings,
+            color: themeForegroundColorHot,
+            size: 100,
+          ),
         ),
       ),
     );
