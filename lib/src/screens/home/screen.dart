@@ -1,5 +1,6 @@
-import 'package:cflutterapp/src/screens/service/screen.dart';
 import 'package:flutter/material.dart';
+
+import 'package:cflutterapp/src/screens/service/screen.dart';
 
 class CFlutterAppHome extends StatelessWidget {
   const CFlutterAppHome({super.key});
@@ -33,39 +34,6 @@ class CFlutterAppHome extends StatelessWidget {
         title: Text(pageLabel),
         foregroundColor: themeForegroundColorHot,
       ),
-      drawer: Drawer(
-        backgroundColor: themeBackgroundColorCool,
-        child: Column(
-          children: [
-            DrawerHeader(
-              child: Icon(
-                Icons.account_balance_sharp,
-                color: themeForegroundColorHot,
-              ),
-            ),
-            ListTile(
-              iconColor: themeForegroundColorHot,
-              textColor: themeForegroundColorHot,
-              title: Text("Home"),
-              leading: Icon(Icons.home),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushNamed(context, CFlutterAppHome.routeName);
-              },
-            ),
-            ListTile(
-              iconColor: themeForegroundColorHot,
-              textColor: themeForegroundColorHot,
-              title: Text("Service"),
-              leading: Icon(Icons.link_sharp),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushNamed(context, CFlutterServices.routeName);
-              },
-            )
-          ],
-        ),
-      ),
       body: Center(
         child: TextButton.icon(
           onPressed: () {
@@ -81,6 +49,24 @@ class CFlutterAppHome extends StatelessWidget {
           icon: Icon(Icons.link_sharp),
           label: Text("Go to service"),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: themeBackgroundColorCool,
+        selectedItemColor: themeForegroundColorHot,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_filled),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.link),
+            label: "Service",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: "Settings",
+          ),
+        ],
       ),
     );
   }
